@@ -5,6 +5,7 @@ namespace ExamenQuarkAcademy
         public Form1()
         {
             InitializeComponent();
+            
         }
     }
 }
