@@ -1,5 +1,4 @@
 C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.csproj.AssemblyReference.cache
-C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.Form1.resources
 C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.csproj.GenerateResource.cache
 C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.AssemblyInfoInputs.cache
@@ -49,3 +48,5 @@ C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\n
 C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.pdb
 C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.genruntimeconfig.cache
 C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ref\ExamenQuarkAcademy.dll
+C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.src.app.Views.PaginaPrincipal.resources
+C:\Users\DaamiAle\source\repos\ExamenQuarkAcademy\ExamenQuarkAcademy\obj\Debug\net6.0-windows\ExamenQuarkAcademy.src.app.Views.SeleccionDeTienda.resources
