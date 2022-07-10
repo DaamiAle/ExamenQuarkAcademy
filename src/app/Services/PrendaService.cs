@@ -14,7 +14,7 @@ namespace ExamenQuarkAcademy.src.app.Services
         }
         public PrendaDTO AddPrenda(PrendaDTO prendaDTO)
         {
-            return Converter.ConvertToPrendaDTO(prendaRepository.Add(Converter.ConvertToPrendaModel(prendaDTO)).Result);
+            return Converter.ConvertToPrendaDTO(prendaRepository.Add(Converter.ConvertToPrendaModel(prendaDTO)));
             /*
              * 
             PrendaModel prendaModel = prendaRepository.GetById(prendaDTO.Id).Result;
@@ -30,6 +30,12 @@ namespace ExamenQuarkAcademy.src.app.Services
                 prendaModel = prendaRepository.AddPrenda(Converter.ConvertToPrendaModel(prendaDTO)).Result ?? throw CustomExceptions.PrendaNotCreatedException();
             }
             return Converter.ConvertToPrendaDTO(prendaModel);*/
+        }
+
+        public PrendaDTO GeyCamisaBy(string manga, string cuello, string calidad)
+        {
+            PrendaModel prendaModel = prendaRepository.GetCamisaBy(manga, cuello, calidad).Result;
+            return Converter.ConvertToPrendaDTO(prendaModel);
         }
     }
 }

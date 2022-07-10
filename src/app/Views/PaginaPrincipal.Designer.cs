@@ -30,16 +30,20 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.cotizador = new System.Windows.Forms.TabPage();
+            this.verificadorStock = new System.Windows.Forms.Button();
+            this.stockDisponible = new System.Windows.Forms.Label();
+            this.verificadorPremium = new System.Windows.Forms.CheckBox();
+            this.verificadorChupin = new System.Windows.Forms.CheckBox();
+            this.selectorCuello = new System.Windows.Forms.ComboBox();
+            this.selectorManga = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.selectorPantalon = new System.Windows.Forms.CheckedListBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.selectorPantalon = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.selectorCamisa = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.selectorCamisa = new System.Windows.Forms.RadioButton();
             this.historial = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
@@ -62,16 +66,20 @@
             // 
             // cotizador
             // 
+            this.cotizador.Controls.Add(this.verificadorStock);
+            this.cotizador.Controls.Add(this.stockDisponible);
+            this.cotizador.Controls.Add(this.verificadorPremium);
+            this.cotizador.Controls.Add(this.verificadorChupin);
+            this.cotizador.Controls.Add(this.selectorCuello);
+            this.cotizador.Controls.Add(this.selectorManga);
             this.cotizador.Controls.Add(this.label6);
             this.cotizador.Controls.Add(this.selectorPantalon);
-            this.cotizador.Controls.Add(this.radioButton2);
             this.cotizador.Controls.Add(this.label5);
             this.cotizador.Controls.Add(this.label4);
-            this.cotizador.Controls.Add(this.selectorCamisa);
             this.cotizador.Controls.Add(this.label3);
             this.cotizador.Controls.Add(this.label2);
             this.cotizador.Controls.Add(this.label1);
-            this.cotizador.Controls.Add(this.radioButton1);
+            this.cotizador.Controls.Add(this.selectorCamisa);
             this.cotizador.Location = new System.Drawing.Point(4, 24);
             this.cotizador.Name = "cotizador";
             this.cotizador.Padding = new System.Windows.Forms.Padding(3);
@@ -80,44 +88,98 @@
             this.cotizador.Text = "Cotizador";
             this.cotizador.UseVisualStyleBackColor = true;
             // 
+            // verificadorStock
+            // 
+            this.verificadorStock.Location = new System.Drawing.Point(38, 270);
+            this.verificadorStock.Name = "verificadorStock";
+            this.verificadorStock.Size = new System.Drawing.Size(200, 30);
+            this.verificadorStock.TabIndex = 16;
+            this.verificadorStock.Text = "Verificar Disponibilidad";
+            this.verificadorStock.UseVisualStyleBackColor = true;
+            this.verificadorStock.Click += new System.EventHandler(this.verificadorStock_Click);
+            // 
+            // stockDisponible
+            // 
+            this.stockDisponible.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stockDisponible.Location = new System.Drawing.Point(140, 230);
+            this.stockDisponible.Name = "stockDisponible";
+            this.stockDisponible.Size = new System.Drawing.Size(120, 30);
+            this.stockDisponible.TabIndex = 15;
+            this.stockDisponible.Text = "Stock disponible:";
+            this.stockDisponible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // verificadorPremium
+            // 
+            this.verificadorPremium.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.verificadorPremium.Location = new System.Drawing.Point(10, 230);
+            this.verificadorPremium.Name = "verificadorPremium";
+            this.verificadorPremium.Size = new System.Drawing.Size(120, 30);
+            this.verificadorPremium.TabIndex = 14;
+            this.verificadorPremium.Text = "Calidad Premium";
+            this.verificadorPremium.UseVisualStyleBackColor = true;
+            // 
+            // verificadorChupin
+            // 
+            this.verificadorChupin.AutoSize = true;
+            this.verificadorChupin.Enabled = false;
+            this.verificadorChupin.Location = new System.Drawing.Point(176, 160);
+            this.verificadorChupin.Name = "verificadorChupin";
+            this.verificadorChupin.Size = new System.Drawing.Size(65, 19);
+            this.verificadorChupin.TabIndex = 13;
+            this.verificadorChupin.Text = "Chupin";
+            this.verificadorChupin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.verificadorChupin.UseVisualStyleBackColor = true;
+            // 
+            // selectorCuello
+            // 
+            this.selectorCuello.Enabled = false;
+            this.selectorCuello.FormattingEnabled = true;
+            this.selectorCuello.Items.AddRange(new object[] {
+            "Mao",
+            "Comun"});
+            this.selectorCuello.Location = new System.Drawing.Point(10, 180);
+            this.selectorCuello.Name = "selectorCuello";
+            this.selectorCuello.Size = new System.Drawing.Size(121, 23);
+            this.selectorCuello.TabIndex = 12;
+            this.selectorCuello.Text = "Cuello";
+            // 
+            // selectorManga
+            // 
+            this.selectorManga.Enabled = false;
+            this.selectorManga.FormattingEnabled = true;
+            this.selectorManga.Items.AddRange(new object[] {
+            "Corta",
+            "Larga"});
+            this.selectorManga.Location = new System.Drawing.Point(10, 150);
+            this.selectorManga.Name = "selectorManga";
+            this.selectorManga.Size = new System.Drawing.Size(121, 23);
+            this.selectorManga.TabIndex = 11;
+            this.selectorManga.Text = "Manga";
+            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(0, 255);
+            this.label6.Location = new System.Drawing.Point(135, 110);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(276, 5);
+            this.label6.Size = new System.Drawing.Size(6, 100);
             this.label6.TabIndex = 10;
             // 
             // selectorPantalon
             // 
-            this.selectorPantalon.CheckOnClick = true;
-            this.selectorPantalon.Enabled = false;
-            this.selectorPantalon.FormattingEnabled = true;
-            this.selectorPantalon.Items.AddRange(new object[] {
-            "Chupin",
-            "Comun"});
-            this.selectorPantalon.Location = new System.Drawing.Point(10, 227);
-            this.selectorPantalon.MultiColumn = true;
+            this.selectorPantalon.Location = new System.Drawing.Point(176, 120);
             this.selectorPantalon.Name = "selectorPantalon";
-            this.selectorPantalon.Size = new System.Drawing.Size(256, 22);
-            this.selectorPantalon.TabIndex = 9;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Location = new System.Drawing.Point(90, 201);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(86, 30);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "PANTALON";
-            this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.selectorPantalon.Size = new System.Drawing.Size(86, 30);
+            this.selectorPantalon.TabIndex = 8;
+            this.selectorPantalon.TabStop = true;
+            this.selectorPantalon.Text = "PANTALON";
+            this.selectorPantalon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.selectorPantalon.UseVisualStyleBackColor = true;
+            this.selectorPantalon.CheckedChanged += new System.EventHandler(this.selectorPantalon_CheckedChanged);
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(0, 190);
+            this.label5.Location = new System.Drawing.Point(0, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(276, 5);
             this.label5.TabIndex = 5;
@@ -129,22 +191,6 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(276, 5);
             this.label4.TabIndex = 4;
-            // 
-            // selectorCamisa
-            // 
-            this.selectorCamisa.CheckOnClick = true;
-            this.selectorCamisa.Enabled = false;
-            this.selectorCamisa.FormattingEnabled = true;
-            this.selectorCamisa.Items.AddRange(new object[] {
-            "Cuello Mao",
-            "Cuello Comun",
-            "Manga Corta",
-            "Manga Larga"});
-            this.selectorCamisa.Location = new System.Drawing.Point(6, 145);
-            this.selectorCamisa.MultiColumn = true;
-            this.selectorCamisa.Name = "selectorCamisa";
-            this.selectorCamisa.Size = new System.Drawing.Size(260, 40);
-            this.selectorCamisa.TabIndex = 3;
             // 
             // label3
             // 
@@ -175,17 +221,18 @@
             this.label1.Text = ".....\r\n.....";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // radioButton1
+            // selectorCamisa
             // 
-            this.radioButton1.Location = new System.Drawing.Point(90, 120);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(86, 30);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "CAMISA";
-            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.selectorCamisa.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.selectorCamisa.Location = new System.Drawing.Point(10, 120);
+            this.selectorCamisa.Name = "selectorCamisa";
+            this.selectorCamisa.Size = new System.Drawing.Size(86, 30);
+            this.selectorCamisa.TabIndex = 7;
+            this.selectorCamisa.TabStop = true;
+            this.selectorCamisa.Text = "CAMISA";
+            this.selectorCamisa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.selectorCamisa.UseVisualStyleBackColor = true;
+            this.selectorCamisa.CheckedChanged += new System.EventHandler(this.selectorCamisa_CheckedChanged);
             // 
             // historial
             // 
@@ -219,6 +266,7 @@
             this.Text = "PaginaPrincipal";
             this.tabControl1.ResumeLayout(false);
             this.cotizador.ResumeLayout(false);
+            this.cotizador.PerformLayout();
             this.historial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -234,12 +282,16 @@
         private Label label1;
         private Label label3;
         private Label label2;
-        private CheckedListBox selectorCamisa;
-        private CheckedListBox selectorPantalon;
-        private RadioButton radioButton2;
+        private RadioButton selectorPantalon;
         private Label label5;
         private Label label4;
-        private RadioButton radioButton1;
+        private RadioButton selectorCamisa;
         private Label label6;
+        private ComboBox selectorCuello;
+        private ComboBox selectorManga;
+        private CheckBox verificadorChupin;
+        private CheckBox verificadorPremium;
+        private Label stockDisponible;
+        private Button verificadorStock;
     }
 }

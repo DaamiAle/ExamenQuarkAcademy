@@ -115,16 +115,27 @@ namespace ExamenQuarkAcademy.src.app.Views
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void selectorCamisa_CheckedChanged(object sender, EventArgs e)
         {
-            selectorCamisa.Enabled = true;
-            selectorPantalon.Enabled = false;
+            selectorManga.Enabled = true;
+            selectorCuello.Enabled = true;
+            verificadorChupin.Enabled = false;
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void selectorPantalon_CheckedChanged(object sender, EventArgs e)
         {
-            selectorPantalon.Enabled = true;
-            selectorCamisa.Enabled = false;
+            verificadorChupin.Enabled = true;
+            selectorManga.Enabled = false;
+            selectorCuello.Enabled = false;
+        }
+
+        private void verificadorStock_Click(object sender, EventArgs e)
+        {
+            if (selectorCamisa.Checked)
+            {
+                string calidad = verificadorPremium.Checked == true ? "Premium" : "Standard";
+                prendaService.GeyCamisaBy(selectorManga.Text, selectorCuello.Text, calidad);
+            }
         }
     }
 }

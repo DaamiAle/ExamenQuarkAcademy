@@ -4,8 +4,9 @@ namespace ExamenQuarkAcademy.src.app.Repositories.Interfaces
 {
     public interface IPrendaRepository
     {
-        Task<PrendaModel> Add(PrendaModel prendaModel);
+        PrendaModel Add(PrendaModel prendaModel);
         Task<PrendaModel> GetById(int id);
         Task<List<PrendaModel>> GetAll();
+        Task<PrendaModel> GetCamisaBy(string manga, string cuello, string calidad);
     }
 }
