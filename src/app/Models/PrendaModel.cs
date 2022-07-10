@@ -1,8 +1,10 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace ExamenQuarkAcademy.src.app.Models
 {
+    
     public class PrendaModel
     {
         public int Id { get; set; }

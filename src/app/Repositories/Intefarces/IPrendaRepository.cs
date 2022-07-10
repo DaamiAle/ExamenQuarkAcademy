@@ -8,5 +8,6 @@ namespace ExamenQuarkAcademy.src.app.Repositories.Interfaces
         Task<PrendaModel> GetById(int id);
         Task<List<PrendaModel>> GetAll();
         Task<PrendaModel> GetCamisaBy(string manga, string cuello, string calidad);
+        Task<PrendaModel> GetPantalonBy(bool esChupin, string calidad);
     }
 }

@@ -133,9 +133,22 @@ namespace ExamenQuarkAcademy.src.app.Views
         {
             if (selectorCamisa.Checked)
             {
-                string calidad = verificadorPremium.Checked == true ? "Premium" : "Standard";
-                prendaService.GeyCamisaBy(selectorManga.Text, selectorCuello.Text, calidad);
+                List<string> stringsValidos = new List<string>() { "Corta", "Larga", "Mao", "Comun" };
+                string calidad = verificadorPremium.Checked ? "Premium" : "Standard";
+                if (stringsValidos.Contains(selectorManga.Text) && stringsValidos.Contains(selectorCuello.Text))
+                {
+                    prendaService.GeyCamisaBy(selectorManga.Text, selectorCuello.Text, calidad);
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una opcion valida para Manga y Cuello");
+                }
             }
+            else if (selectorPantalon.Checked)
+            {
+                prendaService.GeyPantalonBy(verificadorChupin.Checked, verificadorPremium.Checked ? "Premium" : "Standard");
+            }
+            
         }
     }
 }

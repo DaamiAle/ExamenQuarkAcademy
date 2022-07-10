@@ -37,5 +37,11 @@ namespace ExamenQuarkAcademy.src.app.Services
             PrendaModel prendaModel = prendaRepository.GetCamisaBy(manga, cuello, calidad).Result;
             return Converter.ConvertToPrendaDTO(prendaModel);
         }
+
+        public PrendaDTO GeyPantalonBy(bool esChupin, string calidad)
+        {
+            PrendaModel prendaModel = prendaRepository.GetPantalonBy(esChupin, calidad).Result;
+            return Converter.ConvertToPrendaDTO(prendaModel);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ExamenQuarkAcademy.src.app.Models;
 using ExamenQuarkAcademy.src.app.Repositories.Interfaces;
+using System.Linq;
 
 namespace ExamenQuarkAcademy.src.app.Repositories
 {
@@ -29,12 +30,17 @@ namespace ExamenQuarkAcademy.src.app.Repositories
 
         public async Task<PrendaModel> GetCamisaBy(string manga, string cuello, string calidad)
         {
-            return database.Prendas.First(obj => obj.EsCamisa && obj.Manga == manga && obj.Cuello == cuello && obj.Calidad == calidad);
+            return database.Prendas.Single(obj => obj.EsCamisa && obj.Manga == manga && obj.Cuello == cuello && obj.Calidad == calidad);
         }
 
         public PrendaModel Add(PrendaModel prendaModel)
         {
             return database.Prendas.Add(prendaModel).Entity;
+        }
+
+        public async Task<PrendaModel> GetPantalonBy(bool esChupin, string calidad)
+        {
+            return database.Prendas.Single(obj => obj.EsCamisa == false && obj.EsChupin == esChupin && obj.Calidad == calidad);
         }
     }
 
