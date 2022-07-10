@@ -13,14 +13,7 @@ namespace ExamenQuarkAcademy.src.app.DataObjects
         public VendedorDTO Vendedor { get; set; }
         public PrendaDTO Prenda { get; set; }
         public int Cantidad { get; set; }
-        public int Total { get; set; }
-        /*
-        // Propiedades
-        public int Id { get => id; set => id = value; }
-        public DateTime FechaHora { get => fechaHora; set => fechaHora = value; }
-        public Vendedor Vendedor { get => vendedor; set => vendedor = value; }
-        public Prenda Prenda { get => prenda; set => prenda = value; }
-        public int Cantidad { get => cantidad; set => cantidad = value; }
-        public int Total { get => total; set => total = value; }*/
+        public Decimal Total { get; set; }
+        
     }
 }

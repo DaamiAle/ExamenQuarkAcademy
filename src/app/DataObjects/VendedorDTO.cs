@@ -14,12 +14,6 @@ namespace ExamenQuarkAcademy.src.app.DataObjects
         public string Apellido { get; set; }
         public List<CotizacionDTO> Cotizaciones { get; set; }
         public TiendaDTO Tienda { get; set; }
-        /*
-        // Propiedades
-        public int Id { get => id; set => id = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
-        public List<Cotizacion> Cotizaciones { get => cotizaciones; set => cotizaciones = value; }
-        public Tienda Tienda { get => tienda; set => tienda = value; }*/
+        
     }
 }

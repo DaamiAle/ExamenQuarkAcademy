@@ -18,29 +18,30 @@ namespace ExamenQuarkAcademy.src.app
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TiendaModel>().ToTable("Tiendas");
-            modelBuilder.Entity<TiendaModel>(entitiy =>
+            modelBuilder.Entity<TiendaModel>(entity =>
             {
-                entitiy.HasKey(ent => ent.Id);
+                entity.HasKey(ent => ent.Id);
             });
             base.OnModelCreating(modelBuilder);
             
             modelBuilder.Entity<VendedorModel>().ToTable("Vendedores");
-            modelBuilder.Entity<VendedorModel>(entitiy =>
+            modelBuilder.Entity<VendedorModel>(entity =>
             {
-                entitiy.HasKey(ent => ent.Id);
+                entity.HasKey(ent => ent.Id);
             });
             base.OnModelCreating(modelBuilder);
+            
             modelBuilder.Entity<CotizacionModel>().ToTable("Cotizaciones");
-            modelBuilder.Entity<CotizacionModel>(entitiy =>
+            modelBuilder.Entity<CotizacionModel>(entity =>
             {
-                entitiy.HasKey(ent => ent.Id);
+                entity.HasKey(ent => ent.Id);
             });
             base.OnModelCreating(modelBuilder);
             
             modelBuilder.Entity<PrendaModel>().ToTable("Prendas");
-            modelBuilder.Entity<PrendaModel>(entitiy =>
+            modelBuilder.Entity<PrendaModel>(entity =>
             {
-                entitiy.HasKey(ent => ent.Id);
+                entity.HasKey(ent => ent.Id);             
             });
             base.OnModelCreating(modelBuilder);
         }

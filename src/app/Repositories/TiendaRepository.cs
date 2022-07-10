@@ -24,11 +24,6 @@ namespace ExamenQuarkAcademy.src.app.Repositories
             return database.Tiendas.Add(tiendaModel).Entity;
         }
 
-        public async Task<List<TiendaModel>> GetAll()
-        {
-            return await Task.FromResult(database.Tiendas.ToList());
-        }
-
         public async Task<TiendaModel> GetByName(string name)
         {
             return await Task.FromResult(database.Tiendas.FirstOrDefault(x => x.Nombre == name));
@@ -36,7 +31,7 @@ namespace ExamenQuarkAcademy.src.app.Repositories
 
         public async Task<TiendaModel> GetTiendaById(int id)
         {
-            return await database.Tiendas.FindAsync(id);
+            return database.Tiendas.Find(id);
 
         }
     }

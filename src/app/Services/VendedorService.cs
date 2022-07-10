@@ -14,7 +14,14 @@ namespace ExamenQuarkAcademy.src.app.Services
         {
             vendedorRepository = new VendedorRepository(context);
         }
+        
 
+
+        /// <summary>
+        /// Aqui Hay que revisar!!!!!!!
+        /// </summary>
+        /// <param name="vendedorDTO"></param>
+        /// <returns></returns>
         public VendedorDTO AddVededor(VendedorDTO vendedorDTO)
         {
             VendedorModel vendedorModel = vendedorRepository.GetByCode(vendedorDTO.CodigoVendedor).Result;
@@ -24,9 +31,6 @@ namespace ExamenQuarkAcademy.src.app.Services
             }
             return Converter.ConvertToVendedorDTO(vendedorModel);
         }
-
-
-
         
         public VendedorDTO GetByCodigo(string codigo)
         {

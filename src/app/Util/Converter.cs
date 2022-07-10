@@ -15,6 +15,7 @@ namespace ExamenQuarkAcademy.src.app.Util
         {
             TiendaDTO tiendaDTO = new TiendaDTO
             {
+                Id = tiendaModel.Id,
                 Nombre = tiendaModel.Nombre,
                 Direccion = tiendaModel.Direccion,
                 Prendas = tiendaModel.Prendas != null ? tiendaModel.Prendas.Select(p => ConvertToPrendaDTO(p)).ToList() : new List<PrendaDTO>(),
@@ -27,6 +28,7 @@ namespace ExamenQuarkAcademy.src.app.Util
         {
             PrendaDTO prendaDTO = new PrendaDTO
             {
+                Id = prendaModel.Id,
                 Calidad = prendaModel.Calidad,
                 Precio = prendaModel.Precio,
                 Stock = prendaModel.Stock,
@@ -57,7 +59,7 @@ namespace ExamenQuarkAcademy.src.app.Util
                 CodigoVendedor = vendedorModel.CodigoVendedor,
                 Nombre = vendedorModel.Nombre,
                 Apellido = vendedorModel.Apellido,
-                //Cotizaciones = vendedorModel.Cotizaciones.Select(c => ConvertToCotizacionDTO(c)).ToList()
+                Cotizaciones = vendedorModel.Cotizaciones != null ? vendedorModel.Cotizaciones.Select(c => ConvertToCotizacionDTO(c)).ToList() : new List<CotizacionDTO>()
             };
             return vendedorDTO;
         }
@@ -68,14 +70,13 @@ namespace ExamenQuarkAcademy.src.app.Util
         {
             TiendaModel tiendaModel = new TiendaModel
             {
+                Id = tiendaDTO.Id,
                 Nombre = tiendaDTO.Nombre,
-                Direccion = tiendaDTO.Direccion,
-                Prendas = tiendaDTO.Prendas.Select(p => ConvertToPrendaModel(p)).ToList(),
-                Vendedores = tiendaDTO.Vendedores.Select(v => ConvertToVendedorModel(v)).ToList()
+                Direccion = tiendaDTO.Direccion
             };
             return tiendaModel;
         }
-        /**/
+        
         public static VendedorModel ConvertToVendedorModel(VendedorDTO vendedorDTO)
         {
             VendedorModel vendedorModel = new VendedorModel
@@ -84,7 +85,7 @@ namespace ExamenQuarkAcademy.src.app.Util
                 CodigoVendedor = vendedorDTO.CodigoVendedor,
                 Nombre = vendedorDTO.Nombre,
                 Apellido = vendedorDTO.Apellido,
-                //Cotizaciones = vendedorDTO.Cotizaciones.Select(c => ConvertToCotizacionModel(c)).ToList()
+                Tienda = vendedorDTO.Tienda != null ? ConvertToTiendaModel(vendedorDTO.Tienda) : null
             };
             return vendedorModel;
         }
@@ -93,9 +94,11 @@ namespace ExamenQuarkAcademy.src.app.Util
         {
             PrendaModel prenda = new PrendaModel
             {
+                Id = prendaDTO.Id,
                 Calidad = prendaDTO.Calidad,
                 Precio = prendaDTO.Precio,
                 Stock = prendaDTO.Stock,
+                Tienda = prendaDTO != null ? ConvertToTiendaModel(prendaDTO.Tienda) : null,
                 EsCamisa = prendaDTO.EsCamisa,
                 Manga = prendaDTO.Manga,
                 Cuello = prendaDTO.Cuello,
@@ -109,7 +112,8 @@ namespace ExamenQuarkAcademy.src.app.Util
             {
                 Id = cotizacionDTO.Id,
                 FechaHora = cotizacionDTO.FechaHora,
-                Prenda = ConvertToPrendaModel(cotizacionDTO.Prenda),
+                Vendedor = cotizacionDTO.Vendedor != null ? ConvertToVendedorModel(cotizacionDTO.Vendedor) : null,
+                Prenda = cotizacionDTO.Prenda != null ? ConvertToPrendaModel(cotizacionDTO.Prenda) : null,
                 Cantidad = cotizacionDTO.Cantidad,
                 Total = cotizacionDTO.Total
             };

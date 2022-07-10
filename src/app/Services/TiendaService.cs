@@ -34,9 +34,6 @@ namespace ExamenQuarkAcademy.src.app.Services
             return Converter.ConvertToTiendaDTO(tiendaModel);
         }
         
-        public List<TiendaDTO> GetAll(){
-            return tiendaRepository.GetAll().Result.Select(r => Converter.ConvertToTiendaDTO(r)).ToList();
-        }
         public TiendaDTO GetByName(string name)
         {
             TiendaModel tiendaModel = tiendaRepository.GetByName(name).Result;

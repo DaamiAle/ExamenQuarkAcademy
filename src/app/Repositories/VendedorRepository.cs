@@ -15,19 +15,14 @@ namespace ExamenQuarkAcademy.src.app.Repositories
             return database.Vendedores.Add(vendedorModel).Entity;
         }
 
-        public async Task<List<VendedorModel>> GetAll()
-        {
-            return await Task.FromResult(database.Vendedores.ToList());
-        }
-
         public async Task<VendedorModel> GetByCode(string code)
         {
-            return await Task.FromResult(database.Vendedores.FirstOrDefault(x => x.CodigoVendedor == code));
+            return await Task.FromResult(database.Vendedores.FirstOrDefault(v => v.CodigoVendedor == code));
         }
 
         public async Task<VendedorModel> GetById(int id)
         {
-            return await database.Vendedores.FindAsync(id);
+            return database.Vendedores.Find(id);
         }
     }
 }
